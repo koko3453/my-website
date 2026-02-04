@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project List - Konrad</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav style="margin-bottom:2rem;">
+            <a href="index.html" class="link-btn">Home</a>
+        </nav>
+        <h1>All Projects</h1>
+        <div class="project-list" style="max-width:600px;margin:2rem auto 0 auto;display:flex;flex-direction:column;gap:2rem;">
+            <a href="hack_n_slash.html" class="project-card project-card-link">
+                <div>
+                    <div class="project-title">Hack n Slash Survivor</div>
+                    <p class="project-desc">A fast-paced, top-down survival game inspired by Vampire Survivors. Battle endless waves of enemies, collect upgrades, and see how long you can survive!</p>
+                </div>
+            </a>
+            <!-- Add more projects here as needed -->
+        </div>
+        <div class="footer">
+            <p>&copy; 2025 Konrad</p>
+        </div>
+    </div>
+<style>
+.project-list {
+    width: 100%;
+}
+.project-card-link {
+    display: block;
+    text-decoration: none;
+    border: 2px solid #764ba2;
+    border-radius: 16px;
+    background: rgba(40, 30, 60, 0.7);
+    box-shadow: 0 4px 24px 0 rgba(80,40,120,0.10);
+    padding: 1.5rem 2rem;
+    transition: box-shadow 0.2s, border-color 0.2s, background 0.2s;
+    color: inherit;
+}
+.project-card-link:hover, .project-card-link:focus {
+    border-color: #a084e8;
+    box-shadow: 0 8px 32px 0 rgba(120,80,200,0.18);
+    background: rgba(60, 40, 90, 0.85);
+}
+.project-title {
+    font-size: 1.35rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.project-card-link:hover .project-title, .project-card-link:focus .project-title {
+    color: #a084e8;
+    text-decoration: none;
+}
+.project-desc {
+    margin: 0.7rem 0 0 0;
+    color: #ccc;
+    font-size: 1.05rem;
+}
+</style>
+</body>
+</html>

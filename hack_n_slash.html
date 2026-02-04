@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hack n Slash Survivor - Konrad</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav style="margin-bottom:2rem;">
+            <a href="index.html" class="link-btn">Home</a>
+            <a href="project_list.html" class="link-btn">Projects</a>
+        </nav>
+        <h1>Hack n Slash Survivor</h1>
+        <section class="project-section">
+            <section class="screenshots-section" style="margin:2rem 0;">
+                <h2>Screenshots</h2>
+                <div class="screenshots-gallery" style="display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;">
+                    <img src="screenshots/screenshot1.png" alt="Screenshot 1" class="expandable-screenshot" draggable="false" style="width:220px;height:130px;object-fit:cover;border-radius:10px;border:2px solid #aaa;background:#222;cursor:pointer;" />
+                    <img src="screenshots/screenshot2.png" alt="Screenshot 2" class="expandable-screenshot" draggable="false" style="width:220px;height:130px;object-fit:cover;border-radius:10px;border:2px solid #aaa;background:#222;cursor:pointer;" />
+                    <img src="screenshots/screenshot3.png" alt="Screenshot 3" class="expandable-screenshot" draggable="false" style="width:220px;height:130px;object-fit:cover;border-radius:10px;border:2px solid #aaa;background:#222;cursor:pointer;" />
+                </div>
+                <!-- Modal for expanded screenshot -->
+                <div id="screenshot-modal" style="display:none;position:fixed;z-index:1000;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);align-items:center;justify-content:center;">
+                    <img id="modal-img" src="" alt="Expanded Screenshot" style="max-width:90vw;max-height:90vh;border-radius:12px;box-shadow:0 0 32px #000;" />
+                </div>
+            </section>
+            <h2>About the Game</h2>
+            <p><b>Hack n Slash Survivor</b> is a fast-paced, top-down survival game inspired by Vampire Survivors. Battle endless waves of enemies, collect upgrades, and see how long you can survive!</p>
+            <section style="margin:1.5rem 0 1rem 0;text-align:left;max-width:600px;margin-left:auto;margin-right:auto;">
+                <h3 style="margin-bottom:0.5rem;">Gameplay</h3>
+                <ul style="margin-left:1.2em;">
+                    <li>Endless auto-attacking combat on an infinite scrolling map</li>
+                    <li>Defeat enemies to collect XP orbs and level up</li>
+                    <li>Choose 1 of 4 random upgrades each time you level up</li>
+                    <li>Upgrades include <b>Items</b> (passive stat boosts) and <b>Weapons</b> (new or improved attacks)</li>
+                    <li>Enemies become stronger and more numerous over time</li>
+                    <li>Unleash a powerful ultimate ability (SPACE) with a 2-minute cooldown</li>
+                </ul>
+            </section>
+            <section style="margin:1.5rem 0 1rem 0;text-align:left;max-width:600px;margin-left:auto;margin-right:auto;">
+                <h3 style="margin-bottom:0.5rem;">Technical</h3>
+                <ul style="margin-left:1.2em;">
+                    <li>Written in C using the SDL2 library for graphics and input</li>
+                    <li>Data-driven design: game content (enemies, upgrades, etc.) defined in JSON files</li>
+                    <li>Efficient entity and upgrade system for scalable gameplay</li>
+                    <li>Cross-platform support (Windows, Linux, macOS)</li>
+                </ul>
+            </section>
+        </section>
+        <div class="footer">
+            <p>&copy; 2025 Konrad</p>
+        </div>
+    </div>
+<script>
+// Expandable screenshots modal
+// ...existing code from previous script section...
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('screenshot-modal');
+    const modalImg = document.getElementById('modal-img');
+    document.querySelectorAll('.expandable-screenshot').forEach(img => {
+        img.addEventListener('click', function() {
+            modal.style.display = 'flex';
+            modalImg.src = this.src;
+            modalImg.alt = this.alt;
+        });
+    });
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal || e.target === modalImg) {
+            modal.style.display = 'none';
+            modalImg.src = '';
+        }
+    });
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            modal.style.display = 'none';
+            modalImg.src = '';
+        }
+    });
+});
+</script>
+</script>
+<style>
+body, .container, .project-section, .screenshots-section, .screenshots-gallery, .project-title, .project-desc {
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+}
+</style>
+</body>
+</html>
